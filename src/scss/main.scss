@@ -1,0 +1,156 @@
+@import "partials/params";
+@import "partials/mixins";
+
+//Шрифт
+
+@font-face {
+  font-family: "Avenir Next Regular";
+  src: url(fonts/AvenirNext-Regular.ttf);
+}
+
+@font-face {
+  font-family: "Avenir Next Bold";
+  src: url(fonts/AvenirNext-Bold.ttf);
+}
+
+/* Базовые стили */
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:after,
+*:before {
+  box-sizing: inherit;
+}
+
+body {
+  @include font-normal;
+  font-size: $base-font-size;
+  line-height: $ms;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: bold;
+}
+
+p {
+  font-weight: normal;
+}
+
+.container {
+  display: flex;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100vh;
+}
+
+/* Боковая панель */
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 88px;
+  height: 100%;
+  background-color: $main-color-two;
+  color: $white;
+  & .logo {
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    & span {
+      @include font-bold;
+      font-size: $base-font-size * 3 * $ms;
+    }
+  }
+  &__apps {
+    @include clear;
+    margin-top: 26px;
+    width: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    list-style-type: none;
+    list-style: none;
+  }
+  &__app {
+    display: flex;
+    box-sizing: border-box;
+    margin-top: 18px;
+    padding: 17px;
+    list-style-type: none;
+    list-style: none;
+    border-radius: 25%;
+    cursor: pointer;
+
+    &--red {
+      background-color: $red;
+    }
+
+    &--orange {
+      background-color: $orange;
+    }
+    &--purple {
+      background-color: $purple;
+    }
+    &--green {
+      background-color: $green;
+    }
+  }
+  &__avatar {
+    @include clear;
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+    position: absolute;
+    bottom: 25px;
+    left: 14px;
+    cursor: pointer;
+    & img {
+      box-sizing: border-box;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+    }
+  }
+}
+
+.status {
+  position: absolute;
+  bottom: 0;
+  right: 3px;
+  border: 2px solid $main-color-two;
+  box-sizing: border-box;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  &--on {
+    background-color: $green;
+  }
+  &--busy {
+    background-color: $yellow;
+  }
+  &--off {
+    background-color: $red;
+  }
+}
+
+/* Основной контент */
+
+.main {
+  display: flex;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+/* Header */
+
+/* Контент */
