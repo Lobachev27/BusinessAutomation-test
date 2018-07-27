@@ -1,0 +1,123 @@
+@import "partials/params";
+@import "partials/mixins";
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  background-color: $white;
+  z-index: 1;
+  width: calc(100% - 60px);
+  height: 100%;
+  margin: 30px;
+  border-radius: 6px;
+  box-shadow: 0px 0px 5px rgba(38, 38, 38, 0.2);
+  &__info {
+    display: flex;
+    flex-direction: row;
+    box-sizing: border-box;
+    height: 100%;
+    padding: 40px;
+    & .info__form {
+      display: flex;
+      flex-direction: column;
+      box-sizing: border-box;
+      width: 30%;
+
+      & .form__field {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        box-sizing: border-box;
+
+        background-color: $main-color-one;
+        border: none;
+        margin-bottom: 30px;
+        padding: 15px 0 15px 20px;
+      }
+      & p {
+        @include clear;
+        width: 100%;
+        padding: 0 0 10px 20px;
+        color: $button-bg-color;
+      }
+      & .form__gender {
+        display: flex;
+        flex-direction: row;
+      }
+    }
+    & .info__message {
+      display: flex;
+      flex-direction: column;
+      align-self: flex-start;
+      box-sizing: border-box;
+      position: relative;
+      width: 70%;
+      background-color: $message-bg-color;
+      margin-left: 45px;
+      padding: 40px 70px 70px 110px;
+      border-left: 3px solid $message-border-color;
+      & img {
+        position: absolute;
+        left: 35px;
+        width: 40px;
+        opacity: 0.7;
+      }
+      & h2 {
+        @include clear;
+        @include font-bold;
+        font-size: 1.6rem;
+        padding-bottom: 10px;
+      }
+      & p {
+        @include clear;
+        @include font-normal;
+        font-size: 1.25rem;
+      }
+    }
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    flex-direction: row;
+    box-sizing: border-box;
+    background-color: $main-color-one;
+    height: 84px;
+  }
+
+  & .button {
+    box-sizing: border-box;
+    border: 1px solid $button-bg-color;
+    border-radius: 3px;
+    &__radio {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      width: 100px;
+      padding: 3px 0;
+      & input {
+        display: none;
+      }
+    }
+    &--active {
+      background-color: $button-bg-color;
+      color: $white;
+    }
+    &--passive {
+      background-color: $white;
+      color: $button-bg-color;
+    }
+    &--save {
+      background-color: $button-bg-color;
+      color: $white;
+      font-size: $base-font-size * 1.25;
+      position: relative;
+      right: 16px;
+      bottom: 12px;
+      width: 160px;
+      height: 50px;
+    }
+  }
+}

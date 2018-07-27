@@ -159,6 +159,7 @@ p {
     height: 35px;
     background: $white;
     box-shadow: 0px 0px 8px rgba(38, 38, 38, 0.5);
+    z-index: 100;
     & .container-box {
       display: flex;
       justify-content: space-between;
@@ -209,9 +210,18 @@ p {
 /* Контент */
 
 .content {
+  display: flex;
   background-color: $main-color-one;
   height: 100%;
-  z-index: -1;
+  width: 100%;
+  z-index: 1;
+  & .container-box {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+  }
   & .search {
     margin-top: 70px;
     display: flex;
