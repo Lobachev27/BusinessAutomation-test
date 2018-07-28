@@ -100,6 +100,8 @@
       flex-wrap: wrap;
       width: 100px;
       padding: 3px 0;
+      background-color: $white;
+      color: $button-bg-color;
       & input {
         display: none;
       }
