@@ -91,6 +91,7 @@
     box-sizing: border-box;
     border: 1px solid $button-bg-color;
     border-radius: 3px;
+    cursor: pointer;
     &__radio {
       display: flex;
       justify-content: center;
